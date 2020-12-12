@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #FFFFFF;
+    --color: #000000;
+    --grey: #181818;
+    --body-grey: #383030;
+    --border-grey: #f2f2f2;
+}
+
+body {
+    background: var(--background);
+    line-height: 1.4;
+    font-family: 'Roboto';
+    font-size: 16px;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    color: var(--color);
+}
+
+svg {
+    height: 1.3em;
+
+    path {
+        fill: var(--color);
+    }
+}
+
+.audio_panel {
+    border-top: 1px solid var(--border-grey);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    background: var(--background);
+    opacity: 0.8;
+    padding: .5em 1em;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .controls {
+        display: flex;
+        align-items: center;
+
+        .control {
+            cursor: pointer;
+            padding: 0em 1em;
+
+            &.playpause {
+                width: 2.5em;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+            }
+        }
+    }
+
+    .audio_progress {
+        display: flex;
+        align-items: center;
+
+        .progress {
+            position: relative;
+            width: 50em;
+            height: 2px;
+            background: var(--border-grey);
+
+            .progressbar {
+                height: 100%;
+                background: red;
+            }
+
+            .seek {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                transform: translateY(-3px);
+                opacity: 0;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .time {
+            padding-right: .5em;
+        }
+
+        .total {
+            padding-left: .5em;
+        }
+    }
+
+    .volume_bar {
+        width: 6em;
+        display: flex;
+        align-items: center;
+
+        .progress {
+            width: 100%;
+            height: 2px;
+            background: var(--border-grey);
+            position: relative;
+
+            .progressbar {
+                width: 40%;
+                height: 100%;
+                background: red;
+            }
+
+            input {
+                width: 100%;
+                position: absolute;
+                transform: translateY(-4px);
+                opacity: 0;
+            }
+        }
+    }
+
+    .audio_info {
+        width: 15em;
+    }
+}
+
+.bg {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--background);
+    z-index: -1;
+}
